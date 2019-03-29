@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/node:10.15
     steps:
-      - run: checkout
+      - checkout
       - run: sudo add-apt-repository ppa:ethereum/ethereum -y
       - run: sudo apt-get update
       - run: apt-cache showpkg solc

@@ -4,7 +4,7 @@
   "version": "2.0.7",
   "author": "Marek Kirejczyk <account@ethworks.io> (http://ethworks.io)",
   "repository": "git@github.com:EthWorks/Waffle.git",
-  "private": false,
+  "private": true,
   "license": "MIT",
   "main": "dist/waffle.js",
   "types": "dist/waffle.d.ts",
@@ -24,8 +24,9 @@
     "node": ">=10.0"
   },
   "dependencies": {
-    "@resolver-engine/imports-fs": "^0.3.2",
     "@resolver-engine/imports": "^0.3.2",
+    "@resolver-engine/imports-fs": "^0.3.2",
+    "@types/node": "^11.13.0",
     "ethers": "^4.0.0",
     "ganache-core": "2.4.0",
     "solc": "^0.5.1"

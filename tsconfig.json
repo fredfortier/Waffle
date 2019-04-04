@@ -11,6 +11,9 @@
     "outDir": "dist",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
   }
 }

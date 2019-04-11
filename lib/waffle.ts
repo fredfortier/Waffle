@@ -1,3 +1,4 @@
+import {JsonRpcSigner} from 'ethers/providers';
 import Ganache, { GanacheOpts } from 'ganache-core';
 import {ContractFactory, providers, Contract, Wallet} from 'ethers';
 import matchers from './matchers/matchers';
@@ -23,7 +24,7 @@ interface ContractJSON {
 }
 
 export async function deployContract(
-  wallet: Wallet,
+  wallet: JsonRpcSigner,
   contractJSON: ContractJSON,
   args: any[] = [],
   overrideOptions: providers.TransactionRequest = {}

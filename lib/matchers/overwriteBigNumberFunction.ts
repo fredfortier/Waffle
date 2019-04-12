@@ -1,4 +1,5 @@
 import {utils} from 'ethers';
+import {BigNumber} from 'bignumber.js';
 
 const overwriteBigNumberFunction = (
   functionName: string,
@@ -8,13 +9,13 @@ const overwriteBigNumberFunction = (
 ) => function (...args: any[]) {
   const [actual] = args;
   const expected = chaiUtils.flag(this, 'object');
-  if (utils.BigNumber.isBigNumber(expected)) {
+  if (BigNumber.isBigNumber(expected)) {
     this.assert((expected as any)[functionName](actual),
       `Expected "${expected}" to be ${readableName} ${actual}`,
       `Expected "${expected}" NOT to be ${readableName} ${actual}`,
       expected,
       actual);
-  } else if (utils.BigNumber.isBigNumber(actual)) {
+  } else if (BigNumber.isBigNumber(actual)) {
     this.assert((actual as any)[functionName](expected),
       `Expected "${expected}" to be ${readableName} ${actual}`,
       `Expected "${expected}" NOT to be ${readableName} ${actual}`,
